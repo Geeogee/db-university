@@ -2,81 +2,81 @@ Database Università
 
     -DIPARTIMENTO
 
-        id: SMALLINT; NOT NULLABLE; PRIMARY KEY; AUTO_INCREMENT; UNIQUE;
-        nome: VARCHAR(128); NOT NULLABLE;
-        email: VARCHAR(128); NOT NULLABLE; UNIQUE; 
-        pec: VARCHAR(128); NOT NULLABLE; UNIQUE;
-        tel: VARCHAR(32); NOT NULLABLE; 
-        fax: TINYINT; NOT NULLABLE; 
-        sitoWeb: VARCHAR(128); NOT NULLABLE;
-        indirizzoSede: VARCHAR(64); NOT NULLABLE;
-        nomeDirettore: VARCHAR(64); NOT NULLABLE;
-        emailDirettore: VARCHAR(128); NOT NULLABLE; 
+        id: SMALLINT; NOT NULL; PRIMARY KEY; AUTO_INCREMENT; UNIQUE;
+        nome: VARCHAR(128); NOT NULL;
+        email: VARCHAR(128); NOT NULL; UNIQUE; 
+        pec: VARCHAR(128); NOT NULL; UNIQUE;
+        tel: VARCHAR(32); NOT NULL; 
+        fax: TINYINT; NOT NULL; 
+        sitoWeb: VARCHAR(128); NOT NULL;
+        indirizzoSede: VARCHAR(64); NOT NULL;
+        nomeDirettore: VARCHAR(64); NOT NULL;
+        emailDirettore: VARCHAR(128); NOT NULL; 
         pecDirettore: VARCHAR(128); NULLABLE;
         telDirettore: VARCHAR(32); NULLABLE;
 
     -CORSO DI LAUREA
 
-        codice: SMALLINT; NOT NULLABLE; UNIQUE;
-        nome: VARCHAR(128); NOT NULLABLE;
-        tipoAccesso: VARCHAR(32); NOT NULLABLE;
-        durata: TINYINT(1); NOT NULLABLE;
-        cfu: TINYINT(3); NOT NULLABLE;
-        classeLaurea: VARCHAR(8); NOT NULLABLE;
-        nomeDipartimento: VARCHAR(128); NOT NULLABLE; 
-        sitoWeb: VARCHAR(128); NOT NULLABLE;
-        requisitiAmmissione: VARCHAR(128); NOT NULLABLE;
-        dataImmatricolazione: DATE; NOT NULLABLE;
-        sbocchiProfessionali: TEXT; NOT NULLABLE;
+        codice: SMALLINT; NOT NULL; UNIQUE;
+        nome: VARCHAR(128); NOT NULL;
+        tipoAccesso: VARCHAR(32); NOT NULL;
+        durata: TINYINT(1); NOT NULL;
+        cfu: TINYINT(3); NOT NULL;
+        classeLaurea: VARCHAR(8); NOT NULL;
+        nomeDipartimento: VARCHAR(128); NOT NULL; 
+        sitoWeb: VARCHAR(128); NOT NULL;
+        requisitiAmmissione: VARCHAR(128); NOT NULL;
+        dataImmatricolazione: DATE; NOT NULL;
+        sbocchiProfessionali: TEXT; NOT NULL;
 
     -CORSO
 
-        id: SMALLINT; NOT NULLABLE; PRIMARY KEY; AUTO_INCREMENT; UNIQUE;
-        nome: VARCHAR(128); NOT NULLABLE;
-        cfu: TINYINT(2); NOT NULLABLE;
-        anno: TINYINT(1); NOT NULLABLE;
-        descrizione: TEXT; NOT NULLABLE;
+        id: SMALLINT; NOT NULL; PRIMARY KEY; AUTO_INCREMENT; UNIQUE;
+        nome: VARCHAR(128); NOT NULL;
+        cfu: TINYINT(2); NOT NULL;
+        anno: TINYINT(1); NOT NULL;
+        descrizione: TEXT; NOT NULL;
 
     -INSEGNANTE
 
-        matricola: VARCHAR(32); NOT NULLABLE; UNIQUE;
-        nome: VARCHAR(128); NOT NULLABLE;
-        cognome: VARCHAR(128); NOT NULLABLE;
-        genere: VARCHAR(16); NOT NULLABLE;
-        dataNascita: DATE; NOT NULLABLE;
-        luogoNascita: VARCHAR(64); NOT NULLABLE;
-        email: VARCHAR(128); NOT NULLABLE; 
+        matricola: VARCHAR(32); NOT NULL; UNIQUE;
+        nome: VARCHAR(128); NOT NULL;
+        cognome: VARCHAR(128); NOT NULL;
+        genere: VARCHAR(16); NOT NULL;
+        dataNascita: DATE; NOT NULL;
+        luogoNascita: VARCHAR(64); NOT NULL;
+        email: VARCHAR(128); NOT NULL; 
         pec: VARCHAR(128); NULLABLE;
         tel: VARCHAR(32); NULLABLE;
-        salario: INT; NOT NULLABLE;
-        username: VARCHAR(64); NOT NULLABLE; UNIQUE;
-        password: VARCHAR(64); NOT NULLABLE;
+        salario: INT; NOT NULL;
+        username: VARCHAR(64); NOT NULL; UNIQUE;
+        password: VARCHAR(64); NOT NULL;
 
     -APPELLO
 
-        codice: SMALLINT; NOT NULLABLE; UNIQUE;
+        codice: SMALLINT; NOT NULL; UNIQUE;
         numero: VARCHAR(32); DEFAULT('Primo');
-        sessione: VARCHAR(32); NOT NULLABLE;
+        sessione: VARCHAR(32); NOT NULL;
         tipo: VARCHAR(32); DEFAULT('Ordinario');
-        dataInizio: DATE; NOT NULLABLE;
-        dataFine: DATE; NOT NULLABLE;
+        dataInizio: DATE; NOT NULL;
+        dataFine: DATE; NOT NULL;
 
     -STUDENTE
 
-        matricola: VARCHAR(32); NOT NULLABLE; UNIQUE;
-        nome: VARCHAR(128); NOT NULLABLE;
-        cognome: VARCHAR(128); NOT NULLABLE;
-        genere: VARCHAR(16); NOT NULLABLE;
-        dataNascita: DATE; NOT NULLABLE;
-        luogoNascita: VARCHAR(64); NOT NULLABLE;
-        email: VARCHAR(128); NOT NULLABLE; 
+        matricola: VARCHAR(32); NOT NULL; UNIQUE;
+        nome: VARCHAR(128); NOT NULL;
+        cognome: VARCHAR(128); NOT NULL;
+        genere: VARCHAR(16); NOT NULL;
+        dataNascita: DATE; NOT NULL;
+        luogoNascita: VARCHAR(64); NOT NULL;
+        email: VARCHAR(128); NOT NULL; 
         pec: VARCHAR(128); NULLABLE;
         tel: VARCHAR(32); NULLABLE;
-        username: VARCHAR(64); NOT NULLABLE; UNIQUE;
-        password: VARCHAR(64); NOT NULLABLE;
+        username: VARCHAR(64); NOT NULL; UNIQUE;
+        password: VARCHAR(64); NOT NULL;
 
     -ESITO
 
-        codice: SMALLINT; NOT NULLABLE;
-        valutazione: TINYINT(2); NOT NULLABLE;
+        codice: SMALLINT; NOT NULL;
+        valutazione: TINYINT(2); NOT NULL;
 
